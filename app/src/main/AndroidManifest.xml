@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="shikar.in.voidify"
+    android:versionCode="201408250"
+    android:versionName="1.6.4" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-sdk android:minSdkVersion="14" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name=".activity.ControlActivity" >
+        </activity>
+        <activity android:name=".activity.ConnectGroupActivity" >
+        </activity>
+        <activity android:name=".activity.ConnectWifiActivity" >
+        </activity>
+        <activity android:name=".activity.ConnectConfigActivity" >
+        </activity>
+        <activity 
+            android:name=".activity.GuideActivity" 
+            android:screenOrientation="portrait">
+        </activity>
+
+        <receiver
+            android:name=".receiver.WifiBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".service.AutoConnectService" >
+        </service>
+
+        
+    </application>
+
+</manifest>

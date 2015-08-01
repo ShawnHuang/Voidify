@@ -1,0 +1,25 @@
+{
+    "Name": "龍華科技大學校園網路",
+    "SSID": ["LHU_NEW"],
+    "Type": 1,
+    "Version": 1,
+    "UUID": "b91f9b101ef5685817193b1bee6932bd",
+    "Author": "威威",
+    "Form": [{
+        "ID": "Username",
+        "Type": "Text",
+        "Title": "帳號"
+    }, {
+        "ID": "Password",
+        "Type": "Password",
+        "Title": "密碼"
+    }],
+    "Account" : ["Username"],
+    "Script": {
+    		   "CheckType" : "Page",
+    		   "List":[{
+    		   		"Page": "https://securelogin.arubanetworks.com/cgi-bin/login",
+    		   		"JS":"$(\"input[name='user']\").val(\"%Username%\");$(\"input[name='password']\").val(\"%Password%\");$(\"input[name='Login']\").trigger('click');"
+    		   }]
+    }
+}
